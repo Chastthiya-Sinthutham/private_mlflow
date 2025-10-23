@@ -58,10 +58,14 @@ def preprocess_data(data_path, test_size=0.25, random_state=42):
         print(f"Preprocessing Run ID: {run_id}")
         print("-" * 50)
 
-        # Write run_id to GITHUB_OUTPUT for other steps in the workflow to use
-        if "GITHUB_OUTPUT" in os.environ:
-            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-                print(f"run_id={run_id}", file=f)
+        github_output_file = os.getenv('GITHUB_OUTPUT')
+        if github_output_file:
+            try:
+                with open(github_output_file, 'a') as f:
+                    f.write(f"run_id={run_id}\n")
+                print(f"Successfully set GitHub Action output: run_id={run_id}")
+            except Exception as e:
+                print(f"Warning: Could not write to GITHUB_OUTPUT: {e}")
 
 
 if __name__ == "__main__":
