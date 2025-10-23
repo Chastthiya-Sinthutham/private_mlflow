@@ -53,5 +53,5 @@ if __name__ == "__main__":
     # --- IMPORTANT ---
     # Update this path to the actual location of your CSV file.
     # Using raw string (r"...") or forward slashes (/) is recommended for Windows paths.
-    csv_path = "cyberbullying_tweets.csv"
+    csv_path = "private_mlflow/mlops_pipeline/scripts/cyberbullying_tweets.csv"
     validate_data(data_path=csv_path)

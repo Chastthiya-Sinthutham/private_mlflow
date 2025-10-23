@@ -67,7 +67,7 @@ def preprocess_data(data_path, test_size=0.25, random_state=42):
 if __name__ == "__main__":
     # --- IMPORTANT ---
     # Update this path to the actual location of your CSV file.
-    csv_path = "cyberbullying_tweets.csv"
+    csv_path = "private_mlflow/mlops_pipeline/scripts/cyberbullying_tweets.csv"
     preprocess_data(data_path=csv_path)
 
 
